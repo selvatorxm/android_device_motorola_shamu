@@ -396,7 +396,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     audio_hal.period_size=192
 
-<<<<<<< HEAD
 # Set correct voice call audio property values
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=6 \
