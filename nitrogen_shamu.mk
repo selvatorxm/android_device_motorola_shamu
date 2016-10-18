@@ -19,7 +19,10 @@ TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Get the long list of APNs
+PRODUCT_COPY_FILES := device/moto/shamu/apns-conf.xml:system/etc/apns-conf.xml
 
 # Inherit some common Nitrogen stuff.
 $(call inherit-product, vendor/nitrogen/products/common.mk)
