@@ -404,15 +404,6 @@
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
 
-    <!-- doze always on -->
-    <bool name="config_enableDozeAlwaysOn">true</bool>
-
-    <!-- Default value for proximity check on screen wake
-         NOTE ! - Enable for devices that have a fast response
-         proximity sensor (ideally < 300ms) -->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
-    
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>    
 </resources>
