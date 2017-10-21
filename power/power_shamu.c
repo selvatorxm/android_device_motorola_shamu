@@ -279,14 +279,6 @@ static void set_feature(struct power_module *module __unused, feature_t feature,
     }
 }
 
-int get_feature(struct power_module *module __unused, feature_t feature)
-{
-    if (feature == POWER_FEATURE_SUPPORTED_PROFILES) {
-        return 3;
-    }
-    return -1;
-}
-
 static void power_hint( __attribute__((unused)) struct power_module *module,
                         __attribute__((unused)) power_hint_t hint,
                         __attribute__((unused)) void *data)
@@ -302,9 +294,6 @@ static void power_hint( __attribute__((unused)) struct power_module *module,
             if (current_power_profile != PROFILE_BALANCED)
                 return;
             process_video_encode_hint(data);
-            break;
-        case POWER_HINT_SET_PROFILE:
-            set_power_profile(*(int32_t *)data);
             break;
         case POWER_HINT_LOW_POWER:
             if (data)
@@ -342,8 +331,7 @@ static int power_open(const hw_module_t* module, const char* name,
     dev->powerHint = power_hint;
     dev->setInteractive = power_set_interactive;
     dev->setFeature = set_feature;
-    dev->getFeature = get_feature;
-
+    
     *device = (hw_device_t*)dev;
 
     ALOGD("%s: exit", __FUNCTION__);
@@ -369,6 +357,5 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .init = power_init,
     .setInteractive = power_set_interactive,
     .powerHint = power_hint,
-    .setFeature = set_feature,
-    .getFeature = get_feature
+    .setFeature = set_feature
 };
