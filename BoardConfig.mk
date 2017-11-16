@@ -24,7 +24,7 @@ ENABLE_CPUSETS := true
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_KERNEL_CONFIG := six_defconfig
+TARGET_KERNEL_CONFIG := aim_defconfig
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
