@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
-	
+
 # HIDL
 PRODUCT_COPY_FILES += \
     device/motorola/shamu/manifest.xml:system/vendor/manifest.xml
@@ -314,6 +314,7 @@ PRODUCT_PACKAGES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
+    android.hardware.nfc@1.0-impl \
     nfc_nci.bcm2079x.default \
     NfcNci \
     Tag
